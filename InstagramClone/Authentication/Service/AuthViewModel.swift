@@ -41,21 +41,21 @@ class AuthViewModel: ObservableObject {
     
     func register(email: String, password: String, username: String, fullname: String, photo: UIImage?, completion: @escaping () -> Void) {
         
-        guard let photo = photo else { return }
-        
-        // Try to send profile picture to storage
+//        guard let photo = photo else { return }
+//
+//            //Try to send profile picture to storage
 //        ImageUploader.uploadImage(image: photo, type: .profile) { photoURL in
-//            
+//
 //            // Try to create user on auth
 //            Auth.auth().createUser(withEmail: email, password: password) { result, error in
 //                completion()
-//                
+//
 //                if let error = error {
 //                    return print(error.localizedDescription)
 //                }
-//                
+//
 //                guard let user = result?.user else { return }
-//                
+//
 //                // Saves the created user on Firestore
 //                let userData = [
 //                    "email": email,
@@ -64,12 +64,12 @@ class AuthViewModel: ObservableObject {
 //                    "profileImageUrl": photoURL,
 //                    "uid": user.uid
 //                ]
-//                
+//
 //                FIRUsersCollection.document(user.uid).setData(userData) { _ in
 //                    // Set the user session
 //                    self.userSession = user;
 //                }
-//                
+//
 //                self.fetchUser()
 //            }
 //        }

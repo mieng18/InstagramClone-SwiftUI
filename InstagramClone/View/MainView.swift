@@ -27,22 +27,19 @@ struct MainView: View {
                             .tabItem {
                                 Image(systemName: "magnifyingglass")
                             }
-                        Text("")
+                        LoginView()
                             .tag("post")
                             .tabItem {
                                 Image(systemName: "plus.square")
                             }
-                            .onAppear {
-                                mainSelection = "home"
-                                selection = "camera"
-                            }
+                            
                         Reels()
                             .tag("reels")
                             .tabItem {
                                 Image(systemName: "video")
                             }
                         
-//                        
+                        
 //                        ProfileView(user: AuthViewModel.shared.currentUser!)
 //                            .tag("profile")
 //                            .tabItem {
