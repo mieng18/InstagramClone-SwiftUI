@@ -27,11 +27,7 @@ struct MainView: View {
                             .tabItem {
                                 Image(systemName: "magnifyingglass")
                             }
-                        LoginView()
-                            .tag("post")
-                            .tabItem {
-                                Image(systemName: "plus.square")
-                            }
+                        
                             
                         Reels()
                             .tag("reels")
@@ -39,6 +35,11 @@ struct MainView: View {
                                 Image(systemName: "video")
                             }
                         
+                        Text("Notification")
+                            .tag("post")
+                            .tabItem {
+                                Image(systemName: "plus.square")
+                            }
                         
 //                        ProfileView(user: AuthViewModel.shared.currentUser!)
 //                            .tag("profile")

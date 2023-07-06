@@ -75,9 +75,9 @@ struct LoginView: View {
 //            LoadingView(show: $isLoading)
         })
         // MARK: Register View VIA Sheets
-//        .fullScreenCover(isPresented: $createAccount) {
-//            RegisterView()
-//        }
+        .fullScreenCover(isPresented: $createAccount) {
+            RegisterView()
+        }
         // MARK: Displaying Alert
         .alert(errorMessage, isPresented: $showError, actions: {})
     }
