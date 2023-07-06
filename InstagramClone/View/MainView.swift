@@ -41,11 +41,11 @@ struct MainView: View {
                                 Image(systemName: "plus.square")
                             }
                         
-//                        ProfileView(user: AuthViewModel.shared.currentUser!)
-//                            .tag("profile")
-//                            .tabItem {
-//                                Image(systemName: "person")
-//                            }
+                        ProfileView(user: AuthViewModel.shared.currentUser!)
+                            .tag("profile")
+                            .tabItem {
+                                Image(systemName: "person")
+                            }
                     }
                     .tabViewStyle(DefaultTabViewStyle())
                     .tint(.black)

@@ -18,19 +18,17 @@ struct LoginView: View {
     @State var errorMessage: String = ""
     @State var isLoading: Bool = false
     var body: some View {
-        VStack(spacing: 10){
-            Text("Lets Sign you in")
-                .font(.largeTitle.bold())
-                .hAlign(.leading)
+        VStack(spacing: 0){
             
-            Text("Welcome Back,\nYou have been missed")
-                .font(.title3)
-                .hAlign(.leading)
+    
+            Image("instagram")
+            .resizable()
+            .frame(width: 182, height: 50)
+            .padding(.bottom, 12)
             
             VStack(spacing: 12){
                 CustomTextField(text: $emailID, placeholder: "Email")
                 CustomSecureField(text: $password, placeholder: "Password")
-                    .padding(.top, 10)
 
                 
                 Button("Reset password?", action: resetPassword)
@@ -162,6 +160,14 @@ extension View{
 }
 
 
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+    }
+}
+
+
 struct CustomTextField: View {
     @Binding var text: String
     var placeholder: String
@@ -171,20 +177,20 @@ struct CustomTextField: View {
             if text.isEmpty {
                 Text(placeholder)
                     .foregroundColor(.textGray)
-                    .padding(.leading,24)
+                    .padding(.leading,26)
             }
             
             HStack {
                 
                 TextField("", text: $text)
-                    .foregroundColor(.white)
+                    .foregroundColor(.textGray)
                     .autocapitalization(.none)
                     .padding(.leading,0 )
                     .textInputAutocapitalization(.none)
             }
-            .padding()
+            .padding(.all,12)
             .padding(.horizontal, 5)
-            .background(Color(.init(white: 1, alpha: 0.15)))
+            .background(Color(.init(white: 1, alpha: 0.7)))
             .cornerRadius(8)
         }
     }
@@ -221,19 +227,18 @@ struct CustomSecureField: View {
             if text.isEmpty {
                 Text(placeholder)
                     .foregroundColor(.textGray)
-                    .padding(.leading,24)
+                    .padding(.leading,26)
             }
             
             HStack {
-             
-                
+            
                 SecureField("", text: $text)
-                    .foregroundColor(.white)
+                    .foregroundColor(.textGray)
                     .padding(.leading,0)
             }
-            .padding()
+            .padding(.all,12)
             .padding(.horizontal, 5)
-            .background(Color(.init(white: 1, alpha: 0.15)))
+            .background(Color(.init(white: 1, alpha: 0.7)))
             .cornerRadius(8)
         }
     }
