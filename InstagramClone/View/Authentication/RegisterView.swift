@@ -37,43 +37,55 @@ struct RegisterView: View{
     @AppStorage("user_name") var userNameStored: String = ""
     @AppStorage("user_UID") var userUID: String = ""
     var body: some View{
-        VStack(spacing: 10){
-            Text("Lets Register\nAccount")
-                .font(.largeTitle.bold())
-                .hAlign(.leading)
+        VStack{
             
-            Text("Hello user, have a wonderful journey")
-                .font(.title3)
-                .hAlign(.leading)
+    
             
-            // MARK: For Smaller Size Optimization
-            ViewThatFits {
-                ScrollView(.vertical, showsIndicators: false) {
+                Text("Lets Register\nAccount")
+                    .font(.largeTitle.bold())
+                    .hAlign(.leading)
+                
+                Text("Hello user, have a wonderful journey")
+                    .font(.title3)
+                    .hAlign(.leading)
+                
+                // MARK: For Smaller Size Optimization
+                ViewThatFits {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        HelperView()
+                    }
+                    
                     HelperView()
                 }
                 
-                HelperView()
-            }
-            
-            // MARK: Register Button
-            HStack{
-                Text("Already Have an account?")
-                    .foregroundColor(.gray)
-                
-                Button("Login Now"){
-                    dismiss()
+                // MARK: Register Button
+                HStack{
+                    Text("Already Have an account?")
+                        .foregroundColor(.gray)
+                    
+                    Button("Login Now"){
+                        dismiss()
+                    }
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
                 }
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-            }
-            .font(.callout)
-            .vAlign(.bottom)
+                .font(.callout)
+                .vAlign(.bottom)
         }
         .vAlign(.top)
         .padding(15)
         .overlay(content: {
 //            LoadingView(show: $isLoading)
         })
+        .background(
+            LinearGradient(
+                           gradient: Gradient(
+                               colors: [Color.radientPink1, Color.radientPink2]
+                           ),
+                           startPoint: .top,
+                           endPoint: .bottom)
+            .ignoresSafeArea()
+        )
         .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
         .onChange(of: photoItem) { newValue in
             // MARK: Extracting UIImage From PhotoItem
