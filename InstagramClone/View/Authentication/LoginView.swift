@@ -67,10 +67,18 @@ struct LoginView: View {
             .font(.callout)
             .vAlign(.bottom)
         }
-        .background(.white
-        )
+        
         .vAlign(.top)
         .padding(15)
+        .background(
+            LinearGradient(
+                           gradient: Gradient(
+                               colors: [Color.radientPink1, Color.radientPink2]
+                           ),
+                           startPoint: .top,
+                           endPoint: .bottom)
+            .ignoresSafeArea()
+        )
         .overlay(content: {
 //            LoadingView(show: $isLoading)
         })
