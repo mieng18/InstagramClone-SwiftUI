@@ -28,14 +28,10 @@ struct LoginView: View {
                 .hAlign(.leading)
             
             VStack(spacing: 12){
-                TextField("Email", text: $emailID)
-                    .textContentType(.emailAddress)
-                    .border(1, .gray.opacity(0.5))
-                    .padding(.top,25)
-                
-                SecureField("Password", text: $password)
-                    .textContentType(.emailAddress)
-                    .border(1, .gray.opacity(0.5))
+                CustomTextField(text: $emailID, placeholder: "Email")
+                CustomSecureField(text: $password, placeholder: "Password")
+                    .padding(.top, 10)
+
                 
                 Button("Reset password?", action: resetPassword)
                     .font(.callout)
@@ -47,6 +43,7 @@ struct LoginView: View {
                     // MARK: Login Button
                     Text("Sign in")
                         .foregroundColor(.white)
+                        .fontWeight(.medium)
                         .hAlign(.center)
                         .fillView(.black)
                 }
@@ -161,5 +158,104 @@ extension View{
                 RoundedRectangle(cornerRadius: 5, style: .continuous)
                     .fill(color)
             }
+    }
+}
+
+
+struct CustomTextField: View {
+    @Binding var text: String
+    var placeholder: String
+    
+    var body: some View {
+        ZStack (alignment: .leading) {
+            if text.isEmpty {
+                Text(placeholder)
+                    .foregroundColor(.textGray)
+                    .padding(.leading,24)
+            }
+            
+            HStack {
+                
+                TextField("", text: $text)
+                    .foregroundColor(.white)
+                    .autocapitalization(.none)
+                    .padding(.leading,0 )
+                    .textInputAutocapitalization(.none)
+            }
+            .padding()
+            .padding(.horizontal, 5)
+            .background(Color(.init(white: 1, alpha: 0.15)))
+            .cornerRadius(8)
+        }
+    }
+}
+
+struct CustomTextField_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            
+            LinearGradient(
+                gradient: Gradient(
+                    colors: [Color.purple, Color.blue]
+                ),
+                startPoint: .top,
+                endPoint: .bottom
+            ).ignoresSafeArea()
+            
+            VStack {
+                CustomTextField(
+                    text: .constant(""), placeholder: "My placeholder"
+                )
+            }.padding()
+        }
+    }
+}
+
+
+struct CustomSecureField: View {
+    @Binding var text: String
+    var placeholder: String
+    
+    var body: some View {
+        ZStack (alignment: .leading) {
+            if text.isEmpty {
+                Text(placeholder)
+                    .foregroundColor(.textGray)
+                    .padding(.leading,24)
+            }
+            
+            HStack {
+             
+                
+                SecureField("", text: $text)
+                    .foregroundColor(.white)
+                    .padding(.leading,0)
+            }
+            .padding()
+            .padding(.horizontal, 5)
+            .background(Color(.init(white: 1, alpha: 0.15)))
+            .cornerRadius(8)
+        }
+    }
+}
+
+struct CustomSecureField_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            
+            LinearGradient(
+                gradient: Gradient(
+                    colors: [Color.purple, Color.blue]
+                ),
+                startPoint: .top,
+                endPoint: .bottom
+            ).ignoresSafeArea()
+            
+            VStack {
+                CustomSecureField(
+                    text: .constant(""), placeholder: "My placeholder"
+                )
+            }.padding()
+        }
     }
 }
