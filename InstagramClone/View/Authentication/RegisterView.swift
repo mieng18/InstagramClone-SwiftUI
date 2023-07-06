@@ -36,19 +36,17 @@ struct RegisterView: View{
     @AppStorage("user_profile_url") var profileURL: URL?
     @AppStorage("user_name") var userNameStored: String = ""
     @AppStorage("user_UID") var userUID: String = ""
+    
+    
     var body: some View{
         VStack{
             
-    
+                Image("instagram")
+                .resizable()
+                .frame(width: 182, height: 50)
+                .hAlign(.center)
+                    
             
-                Text("Lets Register\nAccount")
-                    .font(.largeTitle.bold())
-                    .hAlign(.leading)
-                
-                Text("Hello user, have a wonderful journey")
-                    .font(.title3)
-                    .hAlign(.leading)
-                
                 // MARK: For Smaller Size Optimization
                 ViewThatFits {
                     ScrollView(.vertical, showsIndicators: false) {
@@ -115,7 +113,7 @@ struct RegisterView: View{
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 }else{
-                    Image("NullProfile")
+                    Image("default-profile-image")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 }
@@ -123,10 +121,13 @@ struct RegisterView: View{
             .frame(width: 85, height: 85)
             .clipShape(Circle())
             .contentShape(Circle())
+            .overlay(
+                Circle()
+                    .stroke(Color.textGray.opacity(0.5),lineWidth: 1)
+            )
             .onTapGesture {
                 showImagePicker.toggle()
             }
-            .padding(.top,25)
             
             TextField("Username", text: $userName)
                 .textContentType(.emailAddress)
@@ -164,6 +165,24 @@ struct RegisterView: View{
     func registerUser(){
         isLoading = true
         closeKeyboard()
+        
+        guard let imageData = userProfilePicData else{return}
+        
+        if let userProfilePicData,let image = UIImage(data: imageData){
+                       Image(uiImage: image)
+                           .resizable()
+                           .aspectRatio(contentMode: .fill)
+            
+            viewModel.register(email: emailID, password: password, username: userName, fullname: userBio, photo: image)
+        }else{
+            Image("NullProfile")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+            
+        }
+                   
+//
+//        viewModel.register(email: emailID, password: password, username: userName, fullname: userBio, photo: image)
         
         
 //        Task{
