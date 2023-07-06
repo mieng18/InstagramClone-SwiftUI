@@ -21,6 +21,8 @@ struct HomeTab: View {
                 
             }
             .padding([.leading, .trailing], 20)
+            
+            FeedView()
         }
     }
 }

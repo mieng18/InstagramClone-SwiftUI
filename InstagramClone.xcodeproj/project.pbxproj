@@ -45,6 +45,9 @@
 		CAC7C4A52A5658CD00979B79 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7C4A42A5658CC00979B79 /* FeedCellViewModel.swift */; };
 		CAC7C4A82A56596100979B79 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7C4A72A56596100979B79 /* NotificationsViewModel.swift */; };
 		CAC7C4AA2A56599900979B79 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7C4A92A56599900979B79 /* Notification.swift */; };
+		CAC7C4AD2A5683E400979B79 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7C4AC2A5683E400979B79 /* LoginViewModel.swift */; };
+		CAC7C4AF2A56968F00979B79 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7C4AE2A56968F00979B79 /* RegisterView.swift */; };
+		CAC7C4B12A56978700979B79 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7C4B02A56978700979B79 /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		CAC7C4A42A5658CC00979B79 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		CAC7C4A72A56596100979B79 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		CAC7C4A92A56599900979B79 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		CAC7C4AC2A5683E400979B79 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CAC7C4AE2A56968F00979B79 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		CAC7C4B02A56978700979B79 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +228,7 @@
 		CAC7C45A2A5628A400979B79 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				CAC7C4AB2A5683BA00979B79 /* Authentication */,
 				CAC7C4A62A56594700979B79 /* Notifications */,
 				CAC7C4942A563B5B00979B79 /* Feed */,
 				CAC7C46C2A562FAF00979B79 /* Profiles */,
@@ -323,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC7C4A02A5647E600979B79 /* LoginView.swift */,
+				CAC7C4AE2A56968F00979B79 /* RegisterView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -333,6 +341,15 @@
 				CAC7C4A72A56596100979B79 /* NotificationsViewModel.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		CAC7C4AB2A5683BA00979B79 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CAC7C4AC2A5683E400979B79 /* LoginViewModel.swift */,
+				CAC7C4B02A56978700979B79 /* RegisterViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC7C4652A562BDD00979B79 /* Reels.swift in Sources */,
+				CAC7C4B12A56978700979B79 /* RegisterViewModel.swift in Sources */,
 				CAC7C4632A562BCC00979B79 /* HomeTab.swift in Sources */,
 				CAC7C4902A5637B700979B79 /* ProfileActionButtons.swift in Sources */,
 				CAC7C4312A56288D00979B79 /* ContentView.swift in Sources */,
@@ -485,6 +503,7 @@
 				CAC7C49A2A563D4200979B79 /* UserService.swift in Sources */,
 				CAC7C4A52A5658CD00979B79 /* FeedCellViewModel.swift in Sources */,
 				CAC7C4832A56361400979B79 /* UserStatView.swift in Sources */,
+				CAC7C4AF2A56968F00979B79 /* RegisterView.swift in Sources */,
 				CAC7C4812A56355300979B79 /* AuthViewModel.swift in Sources */,
 				CAC7C48E2A56377D00979B79 /* PostService.swift in Sources */,
 				CAC7C46E2A562FF100979B79 /* ProfileViewModel.swift in Sources */,
@@ -497,6 +516,7 @@
 				CAC7C42F2A56288D00979B79 /* InstagramCloneApp.swift in Sources */,
 				CAC7C4982A563BB300979B79 /* ImageUploader.swift in Sources */,
 				CAC7C48A2A56370C00979B79 /* PostGridViewModel.swift in Sources */,
+				CAC7C4AD2A5683E400979B79 /* LoginViewModel.swift in Sources */,
 				CAC7C4AA2A56599900979B79 /* Notification.swift in Sources */,
 				CAC7C4692A562E1100979B79 /* ProfileView.swift in Sources */,
 				CAC7C4672A562C0600979B79 /* ExploreTab.swift in Sources */,
