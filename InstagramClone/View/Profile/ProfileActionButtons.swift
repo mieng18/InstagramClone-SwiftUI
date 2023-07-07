@@ -14,7 +14,7 @@ struct ProfileActionButtons: View {
     
     private var isFollowed: Bool { return viewModel.user.isFollowedByCurrentUser ?? false }
     
-    @State var showRemoveFollowerSheet = false;
+    @State var showRemoveFollowerSheet = false
     
     var body: some View {
         if viewModel.user.isCurrentUser {

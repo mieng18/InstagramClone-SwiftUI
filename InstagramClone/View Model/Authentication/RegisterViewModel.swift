@@ -8,7 +8,7 @@
 import SwiftUI
 
 class RegisterViewModel: ObservableObject {
-    @Published var isRegistering: Bool = false;
+    @Published var isRegistering: Bool = false
     
     func register(email: String, password: String, username: String, fullname: String, photo: UIImage?) {
         guard let photo = photo else { return }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @ObservedObject var viewModel: LoginViewModel = LoginViewModel();
+    @ObservedObject var viewModel: LoginViewModel = LoginViewModel()
     @State var emailID: String = ""
     @State var password: String = ""
     // MARK: View Properties
@@ -23,7 +23,7 @@ struct LoginView: View {
     
             Image("instagram")
             .resizable()
-            .frame(width: 182, height: 50)
+            .frame(width: 150, height: 49)
             .padding(.bottom, 12)
             
             VStack(spacing: 12){
@@ -39,7 +39,7 @@ struct LoginView: View {
                 
                 Button(action: loginUser){
                     // MARK: Login Button
-                    Text("Sign in")
+                    Text("Log in")
                         .foregroundColor(.white)
                         .fontWeight(.medium)
                         .hAlign(.center)
@@ -235,6 +235,7 @@ struct CustomSecureField: View {
                 SecureField("", text: $text)
                     .foregroundColor(.textGray)
                     .padding(.leading,0)
+                    .textInputAutocapitalization(.never)
             }
             .padding(.all,12)
             .padding(.horizontal, 5)

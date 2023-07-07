@@ -8,7 +8,7 @@
 import SwiftUI
 
 class LoginViewModel: ObservableObject {
-    @Published var isLogging: Bool = false;
+    @Published var isLogging: Bool = false
     
     func login(email: String, password: String) {
         self.isLogging = true

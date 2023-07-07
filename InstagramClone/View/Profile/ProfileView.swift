@@ -15,7 +15,7 @@ struct ProfileView: View {
 
 
     init(user: User) {
-        viewModel = ProfileViewModel(user: user);
+        viewModel = ProfileViewModel(user: user)
     }
     
     var body: some View {
@@ -82,6 +82,7 @@ struct SettingView: View {
             }
             
             Spacer()
+            
             HStack {
                 Button(action: {
                     Task{

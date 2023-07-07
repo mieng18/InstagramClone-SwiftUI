@@ -43,7 +43,7 @@ struct RegisterView: View{
             
                 Image("instagram")
                 .resizable()
-                .frame(width: 182, height: 50)
+                .frame(width: 150, height: 49)
                 .hAlign(.center)
                     
             
@@ -131,6 +131,7 @@ struct RegisterView: View{
             
             TextField("Username", text: $userName)
                 .textContentType(.emailAddress)
+                .textInputAutocapitalization(.never)
                 .border(1, .gray.opacity(0.5))
             
             TextField("Email", text: $emailID)
@@ -139,6 +140,7 @@ struct RegisterView: View{
             
             SecureField("Password", text: $password)
                 .textContentType(.emailAddress)
+                .textInputAutocapitalization(.never)
                 .border(1, .gray.opacity(0.5))
             
             TextField("About You", text: $userBio,axis: .vertical)
