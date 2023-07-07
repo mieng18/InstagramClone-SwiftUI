@@ -33,7 +33,7 @@ class AuthViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             
-            self.userSession = user;
+            self.userSession = user
             
             self.fetchUser()
         }
@@ -67,7 +67,7 @@ class AuthViewModel: ObservableObject {
 
                 FIRUsersCollection.document(user.uid).setData(userData) { _ in
                     // Set the user session
-                    self.userSession = user;
+                    self.userSession = user
                 }
 
                 self.fetchUser()
@@ -89,7 +89,7 @@ class AuthViewModel: ObservableObject {
         
         FIRUsersCollection.document(userSession!.uid).getDocument { snapshot, _ in
             guard let user = try? snapshot?.data(as: User.self) else { return }
-            self.currentUser = user;
+            self.currentUser = user
         }
     }
     

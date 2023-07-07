@@ -12,7 +12,7 @@ struct FeedView: View {
     
     @ObservedObject var viewModel = FeedViewModel()
     
-    var mainPost: Post?;
+    var mainPost: Post?
     
     var body: some View {
         ScrollView {
