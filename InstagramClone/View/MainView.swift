@@ -7,9 +7,23 @@
 
 import SwiftUI
 
+
+
+enum Tabs: String {
+    case home = "Home"
+    case explore = "Explore"
+    case upload = "Upload"
+    case notifications = "Notifications"
+    case profile = "Profile"
+}
+
+
 struct MainView: View {
     @State private var selection = "home"
     @State private var mainSelection = "reel"
+    
+    @State var selectedTab: Tabs = .home
+
     
     var body: some View {
         NavigationStack {
@@ -28,17 +42,16 @@ struct MainView: View {
                                 Image(systemName: "magnifyingglass")
                             }
                         
-                            
+                        UploadNewPostView(selectedTab: $selectedTab)
+                            .tag("upload")
+                            .tabItem {
+                                Image(systemName: "plus.square")
+                            }
+                        
                         Reels()
                             .tag("reels")
                             .tabItem {
                                 Image(systemName: "video")
-                            }
-                        
-                        Text("Notification")
-                            .tag("post")
-                            .tabItem {
-                                Image(systemName: "plus.square")
                             }
                         
                         ProfileView(user: AuthViewModel.shared.currentUser!)

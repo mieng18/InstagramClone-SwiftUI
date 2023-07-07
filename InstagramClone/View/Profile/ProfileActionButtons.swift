@@ -19,7 +19,7 @@ struct ProfileActionButtons: View {
     var body: some View {
         if viewModel.user.isCurrentUser {
             Button(action: {}) {
-                Text("Edit Profile")
+                Text("Edit profile")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.black262626)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 29)
