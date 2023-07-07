@@ -42,6 +42,7 @@ struct PostDetailsView: View {
                 }
             }, label: {
                 Text("Share")
+                    .fontWeight(.regular)
             }, loading: viewModel.isPosting, loadingColor: .white)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 44)
                 .background(.blue)

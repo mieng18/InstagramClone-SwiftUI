@@ -13,7 +13,7 @@ enum Tabs: String {
     case home = "Home"
     case explore = "Explore"
     case upload = "Upload"
-    case notifications = "Notifications"
+    case reels = "Reels"
     case profile = "Profile"
 }
 
@@ -32,30 +32,30 @@ struct MainView: View {
                 VStack {
                     TabView(selection: $mainSelection){
                         HomeTab()
-                            .tag("home")
+                            .tag(Tabs.home)
                             .tabItem {
                                 Image(systemName: "house")
                             }
                         ExploreTab()
-                            .tag("search")
+                            .tag(Tabs.explore)
                             .tabItem {
                                 Image(systemName: "magnifyingglass")
                             }
                         
                         UploadNewPostView(selectedTab: $selectedTab)
-                            .tag("upload")
+                            .tag(Tabs.upload)
                             .tabItem {
                                 Image(systemName: "plus.square")
                             }
                         
                         Reels()
-                            .tag("reels")
+                            .tag(Tabs.reels)
                             .tabItem {
                                 Image(systemName: "video")
                             }
                         
                         ProfileView(user: AuthViewModel.shared.currentUser!)
-                            .tag("profile")
+                            .tag(Tabs.profile)
                             .tabItem {
                                 Image(systemName: "person")
                             }
