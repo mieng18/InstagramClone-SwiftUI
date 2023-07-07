@@ -119,54 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6D7F7695-E328-406E-A2C8-2E9193F3C538"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "InstagramClone/View Model/Feed/FeedViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "fetchPosts()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6D7F7695-E328-406E-A2C8-2E9193F3C538 - 4b48064751522c7d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "InstagramClone.FeedViewModel.fetchPosts() -&gt; ()"
-                  moduleName = "InstagramClone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maing/Desktop/InstagramClone/InstagramClone/View%20Model/Feed/FeedViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  uuid = "6D7F7695-E328-406E-A2C8-2E9193F3C538 - aeca63b0348cd92f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;InstagramClone.Post&gt;) -&gt; () in InstagramClone.FeedViewModel.fetchPosts() -&gt; ()"
-                  moduleName = "InstagramClone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maing/Desktop/InstagramClone/InstagramClone/View%20Model/Feed/FeedViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DD168A1F-3AA2-4068-915C-387A882C4825"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
