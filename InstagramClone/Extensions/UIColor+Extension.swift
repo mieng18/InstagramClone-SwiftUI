@@ -28,6 +28,11 @@ extension Color {
     static let textGray = Color(0x93979F)
     static let radientPink2 = Color(0xF0BCC9)
     static let radientPink1 = Color(0xEBD1DB)
+    static let grayBorder = Color(0x3C3C43)
+    static let black262626 = Color(0x262626)
+
+
+    
 
 
 
