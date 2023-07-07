@@ -21,11 +21,11 @@ struct ProfileActionButtons: View {
             Button(action: {}) {
                 Text("Edit Profile")
                     .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.black)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 32)
+                    .foregroundColor(.black262626)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 29)
                     .overlay(
                         RoundedRectangle(cornerRadius: 3)
-                            .stroke(Color.gray, lineWidth: 0.5)
+                            .stroke(Color.grayBorder, lineWidth: 0.5)
                     )
             }
         } else {
@@ -40,7 +40,7 @@ struct ProfileActionButtons: View {
                 }) {
                     Text(isFollowed ? "Following" : "Follow")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(isFollowed ? .black : .white)
+                        .foregroundColor(isFollowed ? .black262626 : .white)
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 32)
                         .background(isFollowed ? .white : .blue)
                         .overlay(
@@ -66,7 +66,7 @@ struct ProfileActionButtons: View {
                 Button(action: {}) {
                     Text("Message")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(.black)
+                        .foregroundColor(.black262626)
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 32)
                         .overlay(
                             RoundedRectangle(cornerRadius: 3)

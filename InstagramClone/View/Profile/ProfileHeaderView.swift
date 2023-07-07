@@ -40,10 +40,11 @@ struct ProfileHeaderView: View {
                     .font(.system(size: 16, weight: .regular))
                     .padding(.top, -3)
             }
+            .hAlign(.leading)
             
             ProfileActionButtons(viewModel: viewModel)
             
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 16)
     }
 }
