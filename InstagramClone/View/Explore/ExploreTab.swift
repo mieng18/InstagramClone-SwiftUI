@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct ExploreTab: View {
+    
+    @State var searchText = ""
+    @State var isSearching = false
+    
+    @ObservedObject var viewModel = SearchViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            SearchBar(text: $searchText, isEditing: $isSearching)
+                .padding([.horizontal, .vertical], 15)
+            
+            ZStack {
+                if isSearching {
+                    RecommendedUserListView(searchText: $searchText, viewModel: viewModel)
+                } else {
+                    PostGridView(config: .explore)
+                }
+            }
+            
+        }
     }
 }
 
