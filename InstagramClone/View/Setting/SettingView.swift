@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct SettingView: View {
+    @Environment(\.presentationMode) var presentation
+
 
     var body: some View {
         VStack{
             HStack(spacing:20){
                 Image(systemName: "chevron.backward")
+                    .onTapGesture {
+                        self.presentation.wrappedValue.dismiss()
+                    }
                 Spacer()
         
             }
+            .padding([.leading,.trailing],16)
             
             Spacer()
             
