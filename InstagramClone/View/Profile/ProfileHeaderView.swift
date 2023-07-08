@@ -37,9 +37,11 @@ struct ProfileHeaderView: View {
                     .font(.system(size: 16, weight: .semibold))
                     .padding(.top, 10)
                 
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac eros elit.")
+                Text(user.userbio ?? "")
                     .font(.system(size: 16, weight: .regular))
                     .padding(.top, -3)
+
+    
             }
             .hAlign(.leading)
             
