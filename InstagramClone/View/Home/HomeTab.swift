@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeTab: View {
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             HStack{
                 Image("instagram")
                     .resizable()
