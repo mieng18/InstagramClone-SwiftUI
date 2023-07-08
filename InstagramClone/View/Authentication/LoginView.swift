@@ -176,19 +176,20 @@ struct CustomTextField: View {
         ZStack (alignment: .leading) {
             if text.isEmpty {
                 Text(placeholder)
-                    .foregroundColor(.textGray)
-                    .padding(.leading,26)
+                    .foregroundColor(.black.opacity(0.7))
+                    .padding(.leading,18)
+                    .textInputAutocapitalization(.never)
             }
             
             HStack {
                 
                 TextField("", text: $text)
-                    .foregroundColor(.textGray)
+                    .foregroundColor(.black.opacity(0.9))
                     .autocapitalization(.none)
                     .padding(.leading,0 )
                     .textInputAutocapitalization(.none)
             }
-            .padding(.all,12)
+            .padding(.all,10)
             .padding(.horizontal, 5)
             .background(Color(.init(white: 1, alpha: 0.7)))
             .cornerRadius(8)
@@ -226,18 +227,19 @@ struct CustomSecureField: View {
         ZStack (alignment: .leading) {
             if text.isEmpty {
                 Text(placeholder)
-                    .foregroundColor(.textGray)
-                    .padding(.leading,26)
+                    .foregroundColor(.black.opacity(0.7))
+                    .padding(.leading,18)
+                    .textInputAutocapitalization(.never)
             }
             
             HStack {
             
                 SecureField("", text: $text)
-                    .foregroundColor(.textGray)
+                    .foregroundColor(.black.opacity(0.9))
                     .padding(.leading,0)
                     .textInputAutocapitalization(.never)
             }
-            .padding(.all,12)
+            .padding(.all,10)
             .padding(.horizontal, 5)
             .background(Color(.init(white: 1, alpha: 0.7)))
             .cornerRadius(8)

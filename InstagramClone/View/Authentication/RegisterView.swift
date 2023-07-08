@@ -21,8 +21,8 @@ struct RegisterView: View{
     @State var emailID: String = ""
     @State var password: String = ""
     @State var userName: String = ""
+    @State var fullName: String = ""
     @State var userBio: String = ""
-    @State var userBioLink: String = ""
     @State var userProfilePicData: Data?
     // MARK: View Properties
     @Environment(\.dismiss) var dismiss
@@ -129,28 +129,19 @@ struct RegisterView: View{
                 showImagePicker.toggle()
             }
             
-            TextField("Username", text: $userName)
-                .textContentType(.emailAddress)
-                .textInputAutocapitalization(.never)
-                .border(1, .gray.opacity(0.5))
             
-            TextField("Email", text: $emailID)
-                .textContentType(.emailAddress)
-                .border(1, .gray.opacity(0.5))
+            CustomTextField(text: $userName, placeholder: "Username")
+            CustomTextField(text: $fullName, placeholder: "Full name")
+            CustomTextField(text: $emailID, placeholder: "Email")
             
-            SecureField("Password", text: $password)
-                .textContentType(.emailAddress)
-                .textInputAutocapitalization(.never)
-                .border(1, .gray.opacity(0.5))
-            
+            CustomSecureField(text: $password, placeholder: "Password")
+
+
             TextField("About You", text: $userBio,axis: .vertical)
                 .frame(minHeight: 100,alignment: .top)
                 .textContentType(.emailAddress)
                 .border(1, .gray.opacity(0.5))
-            
-            TextField("Bio Link (Optional)", text: $userBioLink)
-                .textContentType(.emailAddress)
-                .border(1, .gray.opacity(0.5))
+
             
             Button(action: registerUser){
                 // MARK: Login Button
@@ -159,7 +150,7 @@ struct RegisterView: View{
                     .hAlign(.center)
                     .fillView(.black)
             }
-            .disableWithOpacity(userName == "" || userBio == "" || emailID == "" || password == "" || userProfilePicData == nil)
+            .disableWithOpacity(userName == "" || fullName == "" || userBio == "" || emailID == "" || password == "" || userProfilePicData == nil)
             .padding(.top,10)
         }
     }
@@ -175,7 +166,7 @@ struct RegisterView: View{
                            .resizable()
                            .aspectRatio(contentMode: .fill)
             
-            viewModel.register(email: emailID, password: password, username: userName, fullname: userBio, photo: image)
+            viewModel.register(email: emailID, password: password, username: userName, fullname: fullName,userbio: userBio, photo: image)
         }else{
             Image("NullProfile")
                 .resizable()

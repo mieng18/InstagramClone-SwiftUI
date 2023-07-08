@@ -39,7 +39,7 @@ struct UserCell: View {
 struct UserCell_Previews: PreviewProvider {
     static var previews: some View {
         UserCell(
-            user: User(id: "123", username: "john.doe", email: "john.doe", profileImageUrl: "ProfileImage", fullname: "Steve Jobs")
+            user: User(id: "123", username: "john.doe", email: "john.doe", profileImageUrl: "ProfileImage", fullname: "Steve Jobs",userbio: "")
         )
     }
 }

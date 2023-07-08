@@ -39,7 +39,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func register(email: String, password: String, username: String, fullname: String, photo: UIImage?, completion: @escaping () -> Void) {
+    func register(email: String, password: String, username: String, fullname: String, photo: UIImage?,userbio: String?, completion: @escaping () -> Void) {
         
         guard let photo = photo else { return }
 
@@ -62,7 +62,9 @@ class AuthViewModel: ObservableObject {
                     "username": username,
                     "fullname": fullname,
                     "profileImageUrl": photoURL,
-                    "uid": user.uid
+                    "userbio": userbio ?? "",
+                    "uid": user.uid,
+                    
                 ]
 
                 FIRUsersCollection.document(user.uid).setData(userData) { _ in
