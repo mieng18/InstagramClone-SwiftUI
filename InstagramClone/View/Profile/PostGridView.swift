@@ -5,9 +5,9 @@
 //  Created by mai nguyen on 7/5/23.
 //
 
+
 import SwiftUI
 import Kingfisher
-
 
 struct PostGridView: View {
     private let items = [GridItem(), GridItem(), GridItem()]
@@ -37,5 +37,8 @@ struct PostGridView: View {
 
             }
         }
+        
     }
 }
+
+

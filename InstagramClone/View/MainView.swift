@@ -51,7 +51,7 @@ struct MainView: View {
                         Reels()
                             .tag(Tabs.reels)
                             .tabItem {
-                                Image(systemName: "video")
+                                Image(systemName: "play.square")
                             }
                         
                         ProfileView(user: AuthViewModel.shared.currentUser!)
