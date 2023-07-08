@@ -65,7 +65,7 @@ struct MainView: View {
                     .onAppear(perform: {
                         let tabBar = UITabBar.appearance()
                         tabBar.backgroundColor = .white
-                        tabBar.isTranslucent = true
+                        tabBar.isTranslucent = false
                     })
                     .padding([.top, .bottom], 0.1)
                     
@@ -77,7 +77,7 @@ struct MainView: View {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .edgesIgnoringSafeArea([.bottom, .top])
-            .background(.black)
+            .background(.white)
             .navigationTitle("")
         }
         
