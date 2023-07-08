@@ -16,7 +16,7 @@ struct FeedView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack (alignment: .leading, spacing: 24) {
+            LazyVStack (alignment: .leading, spacing: 16) {
                 
                 if (mainPost != nil) {
                     FeedComponent(post: mainPost!)

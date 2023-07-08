@@ -20,7 +20,7 @@ struct FeedComponent: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading,spacing: 0) {
             
             // user information
             HStack {
@@ -74,13 +74,14 @@ struct FeedComponent: View {
                         .frame(width: 20, height: 20)
                 }
             }
-            .padding([.leading, .top], 10)
+            .padding(.leading, 10)
+            .padding(.top,13)
             .foregroundColor(.black)
             
             Text("\(post.likes) likes")
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(.black)
-                .padding([.top, .bottom], 3)
+                .padding([.top, .bottom], 8)
                 .padding(.leading, 10)
             
             HStack {
@@ -96,7 +97,7 @@ struct FeedComponent: View {
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
                 .padding(.leading, 10)
-                .padding(.top, -4)
+                .padding(.top,8)
         }
     }
 }
