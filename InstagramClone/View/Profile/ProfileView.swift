@@ -12,7 +12,9 @@ struct ProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
     @ObservedObject var router = Router()
     @State private var navigateSettingView : Bool = false
-
+    @State var selectedTab: String = "square.grid.3x3"
+    @Namespace var animation
+    
 
     init(user: User) {
         viewModel = ProfileViewModel(user: user)
@@ -22,7 +24,7 @@ struct ProfileView: View {
         
         NavigationStack(){
             
-            VStack {
+            VStack(spacing:0) {
                 
                 HStack(spacing:20){
                     Spacer()
@@ -31,7 +33,6 @@ struct ProfileView: View {
                         .scaledToFill()
                         .frame(width: 20, height: 20)
                     
-         
                     Image("horizontal-line")
                         .resizable()
                         .scaledToFill()
@@ -40,17 +41,43 @@ struct ProfileView: View {
                             navigateSettingView.toggle()
                             
                         }
-                    
                 }
                 .padding([.leading, .trailing], 16)
+
                 
-                ScrollView {
-                    VStack (spacing: 32) {
+                ScrollView(.vertical, showsIndicators: false, content: {
+                    
+                    LazyVStack(spacing: 0, pinnedViews: [.sectionHeaders]){
+                        
+                        
                         ProfileHeaderView(viewModel: viewModel)
                             .padding(.top, 16)
-                        PostGridView(config: .profile(viewModel.user.id ?? ""))
+                        
+                        
+                        Section(header:
+                                    
+                                    // Sticky Top Segmented Bar...
+                                HStack(spacing: 0){
+                            
+                            TabBarButton(image: "square.grid.3x3", isSystemImage: true, animation: animation, selectedTab: $selectedTab)
+            
+                            TabBarButton(image: "person.crop.square", isSystemImage: true, animation: animation, selectedTab: $selectedTab)
+                        }
+                                // Max Frame....
+                                // Conisered as padding....
+                            .frame(height: 50,alignment: .bottom)
+                            .background(Color.white))
+                        {
+                            
+                            ZStack{
+                                
+                                PostGridView(config: .profile(viewModel.user.id ?? ""))
+                                    .background(.white)
+                                
+                            }
+                        }
                     }
-                }
+                })
             }
             
             
@@ -70,42 +97,3 @@ struct ProfileView_Previews: PreviewProvider {
     }
 }
 
-
-struct SettingView: View {
-
-    var body: some View {
-        VStack{
-            HStack(spacing:20){
-                Image(systemName: "chevron.backward")
-                Spacer()
-        
-            }
-            
-            Spacer()
-            
-            HStack {
-                Button(action: {
-                    Task{
-                        await
-                        AuthViewModel.shared.signOut()
-                    }
-                },
-                label: {
-                    Text("Log out")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(.black262626)
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 29)
-                        
-                })
-                .background(
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(Color.grayBorder, lineWidth: 0.5)
-                )
-            }
-            .hAlign(.center)
-            .padding(.all,16)
-            
-        }
-        
-    }
-}
