@@ -13,8 +13,10 @@ struct HomeTab: View {
             HStack{
                 Image("instagram")
                     .resizable()
-                    .frame(width: 120, height: 40)
+                    .frame(width: 110, height: 36)
+                
                 Spacer()
+                
                 Image(systemName: "heart")
                     .font(.title2)
                     .padding([.trailing], 5)

@@ -233,7 +233,6 @@
 		CAC7C42D2A56288D00979B79 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
-				CAC7C4B22A56994D00979B79 /* Extensions */,
 				CAC7C4842A56365800979B79 /* API */,
 				CAC7C47E2A56352C00979B79 /* Authentication */,
 				CAC7C45B2A5628AE00979B79 /* Utils */,
@@ -242,6 +241,7 @@
 				CAC7C4582A56289300979B79 /* View */,
 				CAC7C42E2A56288D00979B79 /* InstagramCloneApp.swift */,
 				CAC7C4302A56288D00979B79 /* ContentView.swift */,
+				CAC7C4B22A56994D00979B79 /* Extensions */,
 				CAC7C4322A56288F00979B79 /* Assets.xcassets */,
 				CAC7C4A22A56549600979B79 /* GoogleService-Info.plist */,
 				CAC7C4342A56288F00979B79 /* Preview Content */,

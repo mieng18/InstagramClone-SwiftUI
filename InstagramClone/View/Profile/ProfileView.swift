@@ -27,8 +27,19 @@ struct ProfileView: View {
             VStack(spacing:0) {
                 
                 HStack(spacing:20){
+
+                    HStack(spacing:6){
+                        Text(viewModel.user.username)
+                            .font(.system(size: 20, weight: .semibold))
+                        
+                        Image(systemName:"chevron.down")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10, height: 10)
+                    }
+                    
                     Spacer()
-                    Image(systemName: "plus.app")
+                    Image(systemName:"plus.app")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 20, height: 20)
